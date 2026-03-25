@@ -119,7 +119,7 @@ export default function Advertorial() {
               const el = document.querySelector("vturb-smartplayer");
               if (el) {
                 el.addEventListener("player:ready", function () {
-                  (el as any).displayHiddenElements(2540, [".esconder"], { persist: true });
+                  (el as any).displayHiddenElements(1824, [".esconder"], { persist: true });
                 });
               }
             }}
