@@ -24,7 +24,9 @@ export default function Page() {
         const timeToWait = Math.max(0, 5000 - timePassed);
 
         setTimeout(() => {
-          btn.click();
+          // Em vez de simular o clique (que navegadores ou o Digistore bloqueiam por segurança/isTrusted=false),
+          // forçamos o redirecionamento direto para a URL processada pelo Digistore.
+          window.location.assign(btn.href);
         }, timeToWait);
         
         return;
