@@ -6,13 +6,32 @@ import Script from "next/script";
 
 export default function Page() {
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const btn = document.getElementById("accept-button");
-      if (btn) {
-        btn.click();
+    const btn = document.getElementById("accept-button") as HTMLAnchorElement;
+    if (!btn) return;
+
+    const originalUrl = btn.href;
+    const checkInterval = 100;
+    const startTime = Date.now();
+
+    const intervalId = setInterval(() => {
+      // Condição de Sucesso: A URL do botão foi modificada pela Digistore.
+      if (btn.href !== originalUrl && btn.href !== "") {
+        clearInterval(intervalId);
+        
+        // Como você tinha pedido 5s antes, vamos garantir que só clique
+        // depois de 5 segundos no total, mesmo que o Digistore carregue rápido.
+        const timePassed = Date.now() - startTime;
+        const timeToWait = Math.max(0, 5000 - timePassed);
+
+        setTimeout(() => {
+          btn.click();
+        }, timeToWait);
+        
+        return;
       }
-    }, 5000);
-    return () => clearTimeout(timer);
+    }, checkInterval);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
