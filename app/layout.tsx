@@ -58,8 +58,8 @@ export default async function Layout({
         {isProduction && <HeaderScript content={content} />}
       </head>
       <body className={bodyClassName} suppressHydrationWarning>
-        {userLayer === 1 ? (
-          <AccessDenied />
+        {userLayer === 1 && !(hdrs.get("x-url") || "").includes("/whitepage") ? (
+          <AccessDenied url={hdrs.get("x-url") || ""} />
         ) : (
           <LayerProvider
             host={host}
