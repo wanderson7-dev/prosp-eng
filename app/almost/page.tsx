@@ -2,12 +2,15 @@
 
 import { BadgeCheck } from "lucide-react";
 import { useEffect } from "react";
+import Script from "next/script";
 
 export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       const btn = document.getElementById("accept-button");
-      if (btn) btn.click();
+      if (btn) {
+        btn.click();
+      }
     }, 5000);
     return () => clearTimeout(timer);
   }, []);
@@ -60,8 +63,17 @@ export default function Page() {
         </a>
 
         {/* Digistore Scripts */}
-        <script src="https://www.digistore24-scripts.com/service/digistore.js" async></script>
-        <script dangerouslySetInnerHTML={{ __html: `digistoreUpsell();` }}></script>
+        <Script 
+          src="https://www.digistore24-scripts.com/service/digistore.js" 
+          strategy="afterInteractive" 
+          onLoad={() => {
+            // @ts-expect-error Digistore is added to window by the script
+            if (typeof window !== 'undefined' && window.digistoreUpsell) {
+              // @ts-expect-error
+              window.digistoreUpsell();
+            }
+          }}
+        />
 
       </div>
     </div>
