@@ -6,7 +6,7 @@ const localTestParam = 'JSvEyAogeImhnLAP';
 // PARAM LIST
 const paramList: Record<string, string> = {
   'Zkxidj6qY8JKKyK': 'new', // LEGACY CAT PARAM
-  'KPTSqxgasIkXDoN': 'new',
+  'KPTSqxgasIkXDoN': 'acutis',
 };
 
 export function middleware(req: NextRequest) {
@@ -34,9 +34,9 @@ export function middleware(req: NextRequest) {
     params.delete('xcat');
     const newUrl = req.nextUrl.clone();
     newUrl.search = params.toString();
-  
+
     const response = NextResponse.redirect(newUrl, { status: 302 });
-    
+
     response.cookies.set({
       name: 'xcat_valid',
       value: paramList[catParam],
@@ -44,9 +44,9 @@ export function middleware(req: NextRequest) {
       maxAge: 60 * 60 * 72,
       httpOnly: false,
     });
-  
+
     return response;
-  
+
   };
 
   return NextResponse.next({
