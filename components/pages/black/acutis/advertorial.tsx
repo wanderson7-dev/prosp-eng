@@ -191,8 +191,8 @@ export default function Advertorial() {
           </div>
 
           {/* Video Title */}
-          <h1 className="text-[15px] sm:text-[17px] font-bold leading-snug text-[#0f0f0f] mb-2">
-            Father Michael Ashford | The 800-Year-Old Prayer of Saint Anthony That Has Brought Miracles to Thousands of People | Live at {formattedTime}, {formattedDate}.
+          <h1 className="text-[15px] sm:text-[17px] leading-snug text-[#0f0f0f] mb-2 font-normal">
+            <b style={{ color: "#c00" }}>🔴 LIVE</b> — <b>Special broadcast:</b> The Lost Prayer of King Solomon revealed
           </h1>
 
           {/* Live Chat Section */}
