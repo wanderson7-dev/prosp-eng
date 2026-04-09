@@ -16,7 +16,7 @@ export default function Advertorial() {
 
   useEffect(() => {
     if (videoContainerRef.current && !videoContainerRef.current.hasChildNodes()) {
-      videoContainerRef.current.innerHTML = '<vturb-smartplayer id="vid-69d02caadb572fad2fb12da9" style="display:block;margin:0 auto;width:100%;height:100%"></vturb-smartplayer>';
+      videoContainerRef.current.innerHTML = '<vturb-smartplayer id="vid-69d7f17faaedd2c4c0ccba54" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"></vturb-smartplayer>';
     }
   }, []);
 
@@ -61,7 +61,7 @@ export default function Advertorial() {
       const progress = scheduledMessages.length <= 1 ? 1 : idx / (scheduledMessages.length - 1);
 
       if (ts >= nextAt && idx < scheduledMessages.length) {
-        
+
         let msgsToAdd = [scheduledMessages[idx]];
         idx++;
 
@@ -72,7 +72,7 @@ export default function Advertorial() {
         } else {
           nextAt = ts + nextIntervalMs(elapsedSec, progress);
         }
-        
+
         setVisibleMessages((prev) => [...prev, ...msgsToAdd]);
       }
 
@@ -147,17 +147,19 @@ export default function Advertorial() {
       <main className="max-w-2xl mx-auto">
 
         {/* Video Player */}
-        <section className="w-full relative bg-black aspect-video">
-          <div id="player-wrapper" className="w-full h-full" ref={videoContainerRef}>
+        <section className="w-full relative flex justify-center items-center overflow-hidden">
+          <div className="w-full max-w-[400px] aspect-[3/4] relative">
+            <div id="player-wrapper" className="absolute top-0 left-0 w-full h-full" ref={videoContainerRef}>
+            </div>
           </div>
           <Script
-            src="https://scripts.converteai.net/e47d2695-e7da-47cf-a7a5-1f9da5313774/players/69d02caadb572fad2fb12da9/v4/player.js"
+            src="https://scripts.converteai.net/e47d2695-e7da-47cf-a7a5-1f9da5313774/players/69d7f17faaedd2c4c0ccba54/v4/player.js"
             strategy="afterInteractive"
             onLoad={() => {
               const el = document.querySelector("vturb-smartplayer");
               if (el) {
                 el.addEventListener("player:ready", function () {
-                  (el as any).displayHiddenElements(1948, [".esconder"], { persist: true });
+                  (el as any).displayHiddenElements(2089, [".esconder"], { persist: true });
                 });
               }
             }}
@@ -173,26 +175,22 @@ export default function Advertorial() {
           }
         `}</style>
 
-        {/* Progress bar */}
-        <div className="w-full h-[3px] bg-gray-300 relative">
-          <div className="absolute top-0 left-0 h-full bg-[#FF0000] w-[15%]"></div>
-        </div>
 
         <div className="px-3 sm:px-4 pt-3 pb-6">
 
           {/* CTA Button */}
           <div className="w-full my-5 esconder">
             <a
-              href="https://www.checkout-ds24.com/product/667753?src=acutis"
+              href="https://www.checkout-ds24.com/product/667753?src=vsl3"
               className="block w-full text-center bg-[#E8740C] hover:bg-[#D4680A] text-white font-bold text-base sm:text-lg py-4 px-6 rounded-full transition-all shadow-lg animate-pulse"
             >
-              I Want the Sacred Prayer of Saint Anthony
+              I WANT ACCESS TO THE PRAYER
             </a>
           </div>
 
           {/* Video Title */}
-          <h1 className="text-[15px] sm:text-[17px] leading-snug text-[#0f0f0f] mb-2 font-normal">
-            <b style={{ color: "#c00" }}>🔴 LIVE</b> — <b>Special broadcast:</b> The Lost Prayer of King Solomon revealed
+          <h1 suppressHydrationWarning className="text-[15px] sm:text-[17px] leading-snug text-[#0f0f0f] mb-2 font-bold">
+            <b>CENSORED BY THE VATICAN:</b> The prayer of Carlo Acutis that opens your heart to God… | Live at {formattedTime}, {formattedDate}.
           </h1>
 
           {/* Live Chat Section */}
@@ -248,10 +246,10 @@ export default function Advertorial() {
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
-                <img src="/logos/nbc.png" alt="Channel" className="w-full h-full object-cover" />
+                <img src="/logos/abc.png" alt="Channel" className="w-full h-full object-cover" />
               </div>
               <div>
-                <p className="text-sm font-bold text-[#0f0f0f]">Vatican News</p>
+                <p className="text-sm font-bold text-[#0f0f0f]">ABC News</p>
                 <p className="text-[12px] text-[#606060]">98.3K subscribers</p>
               </div>
             </div>
