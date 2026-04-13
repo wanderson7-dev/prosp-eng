@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import { headers, cookies } from "next/headers";
 import "@/app/globals.css";
+import { CSPostHogProvider } from "@/components/posthog-provider";
+import SuspendedPostHogPageView from "@/components/posthog-pageview";
 
 const redHatDisplay = Red_Hat_Display({
   variable: "--font-red-hat-display",
@@ -59,18 +61,21 @@ export default async function Layout({
         {isProduction && <HeaderScript content={content} />}
       </head>
       <body className={bodyClassName} suppressHydrationWarning>
-        {userLayer === 1 && !(hdrs.get("x-url") || "").includes("/whitepage") ? (
-          <AccessDenied url={hdrs.get("x-url") || ""} />
-        ) : (
-          <LayerProvider
-            host={host}
-            layer={userLayer}
-            params={params}
-            content={content}
-          >
-            {children}
-          </LayerProvider>
-        )}
+        <CSPostHogProvider>
+          <SuspendedPostHogPageView />
+          {userLayer === 1 && !(hdrs.get("x-url") || "").includes("/whitepage") ? (
+            <AccessDenied url={hdrs.get("x-url") || ""} />
+          ) : (
+            <LayerProvider
+              host={host}
+              layer={userLayer}
+              params={params}
+              content={content}
+            >
+              {children}
+            </LayerProvider>
+          )}
+        </CSPostHogProvider>
       </body>
     </html>
   );
