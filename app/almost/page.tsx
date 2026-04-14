@@ -18,15 +18,13 @@ export default function Page() {
       if (btn.href !== originalUrl && btn.href !== "") {
         clearInterval(intervalId);
         
-        // Como você tinha pedido 5s antes, vamos garantir que só clique
-        // depois de 5 segundos no total, mesmo que o Digistore carregue rápido.
         const timePassed = Date.now() - startTime;
         const timeToWait = Math.max(0, 5000 - timePassed);
 
         setTimeout(() => {
-          // Em vez de simular o clique (que navegadores ou o Digistore bloqueiam por segurança/isTrusted=false),
-          // forçamos o redirecionamento direto para a URL processada pelo Digistore.
-          window.location.assign(btn.href);
+          // Precisamos disparar o clique real do DOM para que os event listeners
+          // injetados pelo Digistore disparem e validem a sessão antes do salto.
+          btn.click();
         }, timeToWait);
         
         return;
