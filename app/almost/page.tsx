@@ -22,9 +22,9 @@ export default function Page() {
         const timeToWait = Math.max(0, 5000 - timePassed);
 
         setTimeout(() => {
-          // Precisamos disparar o clique real do DOM para que os event listeners
-          // injetados pelo Digistore disparem e validem a sessão antes do salto.
-          btn.click();
+          // Em vez de simular o clique (que navegadores ou o Digistore bloqueiam por segurança/isTrusted=false),
+          // forçamos o redirecionamento direto para a URL processada pelo Digistore.
+          window.location.assign(btn.href);
         }, timeToWait);
         
         return;
