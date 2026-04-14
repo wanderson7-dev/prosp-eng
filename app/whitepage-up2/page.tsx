@@ -7,7 +7,6 @@ export default function WhitepageUp2() {
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-  useEffect(() => {
     if (!videoRef.current) return;
     
     videoRef.current.innerHTML = '<vturb-smartplayer id="vid-69c1b30c137969468e7f9fd8" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>';

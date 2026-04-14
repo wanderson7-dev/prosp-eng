@@ -8,7 +8,6 @@ export default function WhitepageUp1() {
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-  useEffect(() => {
     if (!videoRef.current) return;
     
     // 1. Renderizamos o elemento customizado apenas no client-side para evitar conflito com o Next.js Hydration
