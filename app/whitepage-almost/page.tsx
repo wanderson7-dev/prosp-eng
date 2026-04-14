@@ -1,10 +1,10 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
 import { CheckCircle2, Star, MessageCircle, Heart, Shield } from "lucide-react";
 
 export default function WhitepageAlmost() {
-
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-blue-200">
       
@@ -104,17 +104,7 @@ export default function WhitepageAlmost() {
         `}} />
 
         {/* Digistore Scripts */}
-        <Script 
-          src="https://www.digistore24-scripts.com/service/digistore.js" 
-          strategy="afterInteractive" 
-          onLoad={() => {
-            // @ts-expect-error Digistore is added to window by the script
-            if (typeof window !== 'undefined' && window.digistoreUpsell) {
-              // @ts-expect-error
-              window.digistoreUpsell();
-            }
-          }}
-        />
+        <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
       </main>
 
     </div>

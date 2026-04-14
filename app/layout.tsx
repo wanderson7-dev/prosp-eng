@@ -59,6 +59,9 @@ export default async function Layout({
           defer
         ></script>
         {isProduction && <HeaderScript content={content} />}
+        {/* Digistore Global Upsell Init */}
+        <script src="https://www.digistore24-scripts.com/service/digistore.js" />
+        <script dangerouslySetInnerHTML={{ __html: 'digistoreUpsell();' }} />
       </head>
       <body className={bodyClassName} suppressHydrationWarning>
         <CSPostHogProvider>

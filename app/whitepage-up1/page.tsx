@@ -8,6 +8,7 @@ export default function WhitepageUp1() {
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+  useEffect(() => {
     if (!videoRef.current) return;
     
     // 1. Renderizamos o elemento customizado apenas no client-side para evitar conflito com o Next.js Hydration
@@ -71,16 +72,6 @@ export default function WhitepageUp1() {
       </div>
 
       <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
-      <Script id="digistore-upsell" strategy="afterInteractive">
-        {`
-          var dsInterval = setInterval(function() {
-            if (typeof digistoreUpsell === 'function' && document.querySelector('a[href*="answer/yes"]')) {
-              digistoreUpsell();
-              clearInterval(dsInterval);
-            }
-          }, 200);
-        `}
-      </Script>
     </div>
   );
 }

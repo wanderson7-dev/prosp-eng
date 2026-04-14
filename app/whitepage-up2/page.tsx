@@ -7,6 +7,7 @@ export default function WhitepageUp2() {
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+  useEffect(() => {
     if (!videoRef.current) return;
     
     videoRef.current.innerHTML = '<vturb-smartplayer id="vid-69c1b30c137969468e7f9fd8" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>';
@@ -72,16 +73,6 @@ export default function WhitepageUp2() {
       </div>
 
       <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
-      <Script id="digistore-upsell" strategy="afterInteractive">
-        {`
-          var dsInterval = setInterval(function() {
-            if (typeof digistoreUpsell === 'function' && document.querySelector('a[href*="answer/yes"]')) {
-              digistoreUpsell();
-              clearInterval(dsInterval);
-            }
-          }, 200);
-        `}
-      </Script>
     </div>
   );
 }
