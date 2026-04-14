@@ -4,7 +4,15 @@ import { useEffect } from "react";
 import { usePostHog } from "posthog-js/react";
 
 export default function AccessDenied({ url = "" }: { url?: string }) {
-  const src = url.includes("/almost") ? "/whitepage-almost" : "/whitepage";
+  let src = "/whitepage";
+  if (url.includes("/almost")) {
+    src = "/whitepage-almost";
+  } else if (url.includes("/up2")) {
+    src = "/whitepage-up2";
+  } else if (url.includes("/up1")) {
+    src = "/whitepage-up1";
+  }
+  
   const posthog = usePostHog();
 
   useEffect(() => {

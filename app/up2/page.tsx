@@ -1,8 +1,7 @@
 import React from "react";
 import Script from "next/script";
 
-
-export default function Up1Page() {
+export default function Up2Page() {
   return (
     <div className="flex flex-col w-full min-h-screen font-[family-name:var(--font-red-hat-display)] bg-slate-50">
 
@@ -27,31 +26,24 @@ export default function Up1Page() {
           {/* Headlines */}
           <div className="space-y-4">
             <h1 className="text-[#22c55e] text-4xl sm:text-5xl font-black uppercase leading-tight tracking-tight drop-shadow-sm">
-              This is your only opportunity
+              CONGRATULATIONS!
             </h1>
-            <p className="text-slate-800 text-lg sm:text-xl font-medium">
-              To break forever the chains of <span className="font-black">scarcity and pain!</span>
-            </p>
           </div>
 
           {/* Body Text */}
           <div className="space-y-6 text-slate-800 text-[17px] leading-relaxed max-w-[420px]">
             <p>
-              The Divine Frequency that awaits you here <span className="bg-[#facc15] font-semibold px-2 py-0.5 rounded-sm">will not be offered again</span>,
-              and whoever lets it pass chooses to remain tied to a life of struggle.
+              God has seen your faith and is about to pour immense blessings into your life. Don't let this sacred moment pass. <span className="bg-[#facc15] font-semibold px-2 py-0.5 rounded-sm">Your new story begins now.</span>!
             </p>
             <p>
-              Click on <span className="text-[#15803d] font-bold">"I WANT THIS MIRACLE"</span> and allow the
-              miracle to transform your destiny.
+              All you need to do is click the <span className="text-[#15803d] font-bold">"RECEIVE NOW &mdash; HEAVEN WON'T WAIT"</span> button and open your heart to the miracles that await you.
             </p>
           </div>
 
-
-
           {/* CTA Buttons */}
           <div className="w-full flex flex-col space-y-4 pt-2">
-            <a href="https://www.checkout-ds24.com/answer/yes?template=light" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
-              I WANT THIS MIRACLE
+            <a href="https://www.checkout-ds24.com/answer/yes?template=light" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
+              RECEIVE NOW &mdash; HEAVEN WON'T WAIT
             </a>
             <a href="https://www.checkout-ds24.com/answer/no" className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]">
               No thanks, I decline this opportunity.
