@@ -72,7 +72,7 @@ export default function Page() {
         {/* Action Buttons */}
         <a 
           id="accept-button"
-          href="https://www.checkout-ds24.com/answer/yes?template=light"
+          href="https://www.checkout-ds24.com/answer/yes"
           className="animate-pulse-scale block text-center w-full bg-[#009E18] hover:bg-[#008A15] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 uppercase text-lg tracking-wide"
         >
           Access Product
