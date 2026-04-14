@@ -1,38 +1,11 @@
 "use client";
 
 import { BadgeCheck } from "lucide-react";
-import { useEffect } from "react";
 import Script from "next/script";
 
 export default function Page() {
-  useEffect(() => {
-    const btn = document.getElementById("accept-button") as HTMLAnchorElement;
-    if (!btn) return;
-
-    const originalUrl = btn.href;
-    const checkInterval = 100;
-    const startTime = Date.now();
-
-    const intervalId = setInterval(() => {
-      // Condição de Sucesso: A URL do botão foi modificada pela Digistore.
-      if (btn.href !== originalUrl && btn.href !== "") {
-        clearInterval(intervalId);
-        
-        const timePassed = Date.now() - startTime;
-        const timeToWait = Math.max(0, 5000 - timePassed);
-
-        setTimeout(() => {
-          // Em vez de simular o clique (que navegadores ou o Digistore bloqueiam por segurança/isTrusted=false),
-          // forçamos o redirecionamento direto para a URL processada pelo Digistore.
-          window.location.assign(btn.href);
-        }, timeToWait);
-        
-        return;
-      }
-    }, checkInterval);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  // Autoclick foi removido. Agora o redirecionamento ocorre via clique manual
+  // para preservar a sessão da Digistore e o rastreamento adequado (isTrusted: true).
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#020617] px-6 py-12 text-center text-white font-[family-name:var(--font-red-hat-display),sans-serif]">
