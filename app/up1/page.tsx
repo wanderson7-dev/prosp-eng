@@ -1,5 +1,5 @@
 import React from "react";
-import DigistoreScript from "@/components/digistore-script";
+import Script from "next/script";
 
 
 export default function Up1Page() {
@@ -98,7 +98,10 @@ export default function Up1Page() {
         <p>All rights reserved</p>
       </div>
 
-      <DigistoreScript />
+      <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
+      <Script id="digistore-upsell" strategy="afterInteractive">
+        {`digistoreUpsell()`}
+      </Script>
     </div>
   );
 }
