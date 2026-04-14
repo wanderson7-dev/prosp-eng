@@ -100,7 +100,14 @@ export default function Up1Page() {
 
       <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
       <Script id="digistore-upsell" strategy="afterInteractive">
-        {`digistoreUpsell()`}
+        {`
+          var dsInterval = setInterval(function() {
+            if (typeof digistoreUpsell === 'function') {
+              digistoreUpsell();
+              clearInterval(dsInterval);
+            }
+          }, 100);
+        `}
       </Script>
     </div>
   );
