@@ -49,9 +49,9 @@ export default function Page() {
           Access Product
         </a>
 
-        {/* Hidden Deny Button */}
-        <a href="https://www.checkout-ds24.com/answer/no" className="hidden">
-          No
+        {/* Visible Deny Button */}
+        <a href="https://www.checkout-ds24.com/answer/no" className="text-gray-400 hover:text-gray-300 transition-colors underline underline-offset-4 text-sm mt-2">
+          No thanks, I don't want to access the product right now.
         </a>
 
         {/* Digistore Scripts */}

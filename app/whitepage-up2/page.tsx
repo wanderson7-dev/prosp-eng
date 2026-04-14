@@ -73,9 +73,15 @@ export default function WhitepageUp2() {
 
       <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
       <Script id="digistore-upsell" strategy="afterInteractive">
-        {`digistoreUpsell()`}
+        {`
+          var dsInterval = setInterval(function() {
+            if (typeof digistoreUpsell === 'function' && document.querySelector('a[href*="answer/yes"]')) {
+              digistoreUpsell();
+              clearInterval(dsInterval);
+            }
+          }, 200);
+        `}
       </Script>
-
     </div>
   );
 }
