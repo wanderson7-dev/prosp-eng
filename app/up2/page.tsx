@@ -44,7 +44,7 @@ export default function Up2Page() {
 
           {/* CTA Buttons */}
           <div className="w-full flex flex-col space-y-4 pt-2">
-            <a href="https://www.checkout-ds24.com/answer/yes?template=light" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
+            <a href="https://www.checkout-ds24.com/answer/yes" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
               RECEIVE NOW &mdash; HEAVEN WON'T WAIT
             </a>
             <a href="https://www.checkout-ds24.com/answer/no" className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]">
@@ -92,9 +92,9 @@ export default function Up2Page() {
         <p>All rights reserved</p>
       </div>
 
-      <Script 
-        src="https://www.digistore24-scripts.com/service/digistore.js" 
-        strategy="afterInteractive" 
+      <Script
+        src="https://www.digistore24-scripts.com/service/digistore.js"
+        strategy="afterInteractive"
         onLoad={() => {
           // @ts-expect-error Digistore is added to window by the script
           if (typeof window !== 'undefined' && window.digistoreUpsell) {
