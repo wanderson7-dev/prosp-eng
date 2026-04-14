@@ -58,7 +58,7 @@ export default function WhitepageUp1() {
         {/* Call to Actions */}
         <div className="w-full flex flex-col space-y-3 pt-6">
           {/* Main Button */}
-          <a href="https://www.checkout-ds24.com/answer/yes" className="w-full bg-[#22c55e] hover:bg-[#16a34a] text-white font-extrabold py-5 rounded-md shadow-lg text-sm sm:text-base tracking-wide uppercase transition-all active:scale-[0.98]">
+          <a href="https://www.checkout-ds24.com/answer/yes?template=light" className="w-full bg-[#22c55e] hover:bg-[#16a34a] text-white font-extrabold py-5 rounded-md shadow-lg text-sm sm:text-base tracking-wide uppercase transition-all active:scale-[0.98]">
             I WANT TO ACCESS MY PRAYER NOW!
           </a>
           
@@ -72,14 +72,7 @@ export default function WhitepageUp1() {
 
       <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
       <Script id="digistore-upsell" strategy="afterInteractive">
-        {`
-          var dsInterval = setInterval(function() {
-            if (typeof digistoreUpsell === 'function') {
-              digistoreUpsell();
-              clearInterval(dsInterval);
-            }
-          }, 100);
-        `}
+        {`digistoreUpsell()`}
       </Script>
 
     </div>
