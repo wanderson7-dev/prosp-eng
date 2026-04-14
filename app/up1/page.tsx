@@ -50,7 +50,7 @@ export default function Up1Page() {
 
           {/* CTA Buttons */}
           <div className="w-full flex flex-col space-y-4 pt-2">
-            <a href="https://www.checkout-ds24.com/answer/yes?template=light" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
+            <a href="https://www.checkout-ds24.com/answer/yes" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
               I WANT THIS MIRACLE
             </a>
             <a href="https://www.checkout-ds24.com/answer/no" className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]">
