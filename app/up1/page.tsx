@@ -1,9 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Script from "next/script";
 
 export default function Up1Page() {
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (typeof (window as any).digistoreUpsell === "function") {
+        (window as any).digistoreUpsell();
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex flex-col w-full min-h-screen font-[family-name:var(--font-red-hat-display)] bg-slate-50">
 
@@ -24,7 +36,6 @@ export default function Up1Page() {
 
         <div className="relative z-10 flex flex-col items-center w-full max-w-lg px-6 pt-10 text-center space-y-8">
 
-          {/* Headlines */}
           <div className="space-y-4">
             <h1 className="text-[#22c55e] text-4xl sm:text-5xl font-black uppercase leading-tight tracking-tight drop-shadow-sm">
               This is your only opportunity
@@ -34,7 +45,6 @@ export default function Up1Page() {
             </p>
           </div>
 
-          {/* Body Text */}
           <div className="space-y-6 text-slate-800 text-[17px] leading-relaxed max-w-[420px]">
             <p>
               The Divine Frequency that awaits you here <span className="bg-[#facc15] font-semibold px-2 py-0.5 rounded-sm">will not be offered again</span>,
@@ -46,13 +56,12 @@ export default function Up1Page() {
             </p>
           </div>
 
-          {/* CTA Buttons */}
           <div className="w-full flex flex-col space-y-4 pt-2">
 
           <a
             id="accept-button"
             href="https://www.checkout-ds24.com/answer/yes?template=light"
-            className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
+            className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-5 rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
             >
             I WANT THIS MIRACLE
           </a>
@@ -65,7 +74,6 @@ export default function Up1Page() {
         </a>
       </div>
 
-      {/* Scarcity / Urgency */}
       <div className="w-full flex flex-col space-y-3 pt-6 pb-4">
         <div className="flex items-center justify-center space-x-2 text-sm sm:text-[15px]">
           <div className="bg-[#dc2626] text-white text-[10px] font-bold px-2 py-0.5 rounded-sm flex items-center gap-1 uppercase tracking-wider">
@@ -91,22 +99,14 @@ export default function Up1Page() {
     </div>
       </div >
 
-    {/* Footer */ }
-    < div className = "bg-[#1f1f1f] text-gray-400 py-8 flex flex-col items-center justify-center text-sm w-full" >
+      <div className="bg-[#1f1f1f] text-gray-400 py-8 flex flex-col items-center justify-center text-sm w-full">
         <p>Copyright 2026 &ndash; Divine Script &reg;</p>
         <p>All rights reserved</p>
-      </div >
+      </div>
 
-    {/* ✅ Script com onLoad chamando digistoreUpsell() */ }
-    < Script
-  src = "https://www.digistore24-scripts.com/service/digistore.js"
-  strategy = "afterInteractive"
-  onLoad = {() => {
-    if (typeof (window as any).digistoreUpsell === "function") {
-      (window as any).digistoreUpsell();
-    }
-  }
-}
+      <Script
+        src="https://www.digistore24-scripts.com/service/digistore.js"
+        strategy="afterInteractive"
       />
     </div >
   );
