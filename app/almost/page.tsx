@@ -2,8 +2,17 @@
 
 import { BadgeCheck } from "lucide-react";
 import Script from "next/script";
+import { useEffect } from "react";
 
 export default function Page() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const btn = document.getElementById("accept-button");
+      if (btn) btn.click();
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#020617] px-6 py-12 text-center text-white font-[family-name:var(--font-red-hat-display),sans-serif]">
       <div className="flex flex-col items-center max-w-[22rem] w-full gap-8">
