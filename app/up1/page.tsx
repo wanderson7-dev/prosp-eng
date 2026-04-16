@@ -48,56 +48,64 @@ export default function Up1Page() {
 
           {/* CTA Buttons */}
           <div className="w-full flex flex-col space-y-4 pt-2">
-            <a href="https://www.checkout-ds24.com/answer/yes?template=light" className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]">
-              I WANT THIS MIRACLE
-            </a>
-            <a href="https://www.checkout-ds24.com/answer/no" className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]">
-              No thanks, I decline this opportunity.
-            </a>
+
+            id="accept-button"
+            href="https://www.checkout-ds24.com/answer/yes?template=light"
+            className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
+            >
+            I WANT THIS MIRACLE
+          </a>
+
+          href="https://www.checkout-ds24.com/answer/no"
+          className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
+            >
+          No thanks, I decline this opportunity.
+        </a>
+      </div>
+
+      {/* Scarcity / Urgency */}
+      <div className="w-full flex flex-col space-y-3 pt-6 pb-4">
+        <div className="flex items-center justify-center space-x-2 text-sm sm:text-[15px]">
+          <div className="bg-[#dc2626] text-white text-[10px] font-bold px-2 py-0.5 rounded-sm flex items-center gap-1 uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+            Live
           </div>
+          <span className="font-extrabold text-slate-800">
+            <span className="text-[#ca8a04]">⚠️</span> Spots are running out &mdash; only <span className="text-[#dc2626]">5</span> access(es) left today!
+          </span>
+        </div>
 
-          {/* Scarcity / Urgency */}
-          <div className="w-full flex flex-col space-y-3 pt-6 pb-4">
-            <div className="flex items-center justify-center space-x-2 text-sm sm:text-[15px]">
-              <div className="bg-[#dc2626] text-white text-[10px] font-bold px-2 py-0.5 rounded-sm flex items-center gap-1 uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
-                Live
-              </div>
-              <span className="font-extrabold text-slate-800">
-                <span className="text-[#ca8a04]">⚠️</span> Spots are running out &mdash; only <span className="text-[#dc2626]">5</span> access(es) left today!
-              </span>
-            </div>
-
-            <div className="w-full">
-              <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">
-                <div className="h-full rounded-full bg-gradient-to-r from-orange-500 to-red-600" style={{ width: "90%" }} />
-              </div>
-              <div className="flex justify-between mt-2 text-xs font-bold px-1">
-                <span className="text-[#dc2626]">45 taken</span>
-                <span className="text-[#16a34a]">5 remaining</span>
-              </div>
-            </div>
+        <div className="w-full">
+          <div className="w-full h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+            <div className="h-full rounded-full bg-gradient-to-r from-orange-500 to-red-600" style={{ width: "90%" }} />
           </div>
-
+          <div className="flex justify-between mt-2 text-xs font-bold px-1">
+            <span className="text-[#dc2626]">45 taken</span>
+            <span className="text-[#16a34a]">5 remaining</span>
+          </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="bg-[#1f1f1f] text-gray-400 py-8 flex flex-col items-center justify-center text-sm w-full">
+    </div>
+      </div >
+
+    {/* Footer */ }
+    < div className = "bg-[#1f1f1f] text-gray-400 py-8 flex flex-col items-center justify-center text-sm w-full" >
         <p>Copyright 2026 &ndash; Divine Script &reg;</p>
         <p>All rights reserved</p>
-      </div>
+      </div >
 
-      {/* ✅ Script com onLoad chamando digistoreUpsell() */}
-      <Script
-        src="https://www.digistore24-scripts.com/service/digistore.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          if (typeof (window as any).digistoreUpsell === "function") {
-            (window as any).digistoreUpsell();
-          }
-        }}
+    {/* ✅ Script com onLoad chamando digistoreUpsell() */ }
+    < Script
+  src = "https://www.digistore24-scripts.com/service/digistore.js"
+  strategy = "afterInteractive"
+  onLoad = {() => {
+    if (typeof (window as any).digistoreUpsell === "function") {
+      (window as any).digistoreUpsell();
+    }
+  }
+}
       />
-    </div>
+    </div >
   );
 }
