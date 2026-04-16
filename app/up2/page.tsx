@@ -46,7 +46,7 @@ export default function Up2Page() {
 
           <a
             id="accept-button"
-            href="https://www.checkout-ds24.com/answer/yes?template=light"
+            href="https://www.checkout-ds24.com/answer/yes"
             className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
             >
             RECEIVE NOW &mdash; HEAVEN WON'T WAIT

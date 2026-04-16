@@ -60,7 +60,7 @@ export default function Up1Page() {
 
           <a
             id="accept-button"
-            href="https://www.checkout-ds24.com/answer/yes?template=light"
+            href="https://www.checkout-ds24.com/answer/yes"
             className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-5 rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
             >
             I WANT THIS MIRACLE
