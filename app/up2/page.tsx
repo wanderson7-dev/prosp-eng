@@ -1,14 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Script from "next/script";
 
 export default function Up2Page() {
-  const [queryParams, setQueryParams] = useState("");
-
-  useEffect(() => {
-    setQueryParams(window.location.search);
-  }, []);
   return (
     <div className="flex flex-col w-full min-h-screen font-[family-name:var(--font-red-hat-display)] bg-slate-50">
 
@@ -51,14 +46,14 @@ export default function Up2Page() {
 
           <a
             id="accept-button"
-            href={`https://www.checkout-ds24.com/answer/yes${queryParams}`}
+            href="https://www.checkout-ds24.com/answer/yes"
             className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
             >
             RECEIVE NOW &mdash; HEAVEN WON'T WAIT
           </a>
 
           <a
-            href={`https://www.checkout-ds24.com/answer/no${queryParams}`}
+            href="https://www.checkout-ds24.com/answer/no"
             className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
             >
           No thanks, I decline this opportunity.

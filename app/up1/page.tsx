@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Script from "next/script";
 
 export default function Up1Page() {
-  const [queryParams, setQueryParams] = useState("");
 
   useEffect(() => {
-    setQueryParams(window.location.search);
     const interval = setInterval(() => {
       if (typeof (window as any).digistoreUpsell === "function") {
         (window as any).digistoreUpsell();
@@ -62,14 +60,14 @@ export default function Up1Page() {
 
           <a
             id="accept-button"
-            href={`https://www.checkout-ds24.com/answer/yes${queryParams}`}
+            href="https://www.checkout-ds24.com/answer/yes"
             className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-5 rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
             >
             I WANT THIS MIRACLE
           </a>
 
           <a
-            href={`https://www.checkout-ds24.com/answer/no${queryParams}`}
+            href="https://www.checkout-ds24.com/answer/no"
             className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
             >
           No thanks, I decline this opportunity.
