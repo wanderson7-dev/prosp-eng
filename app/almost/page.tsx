@@ -38,20 +38,23 @@ export default function Page() {
         `}} />
 
         {/* Action Buttons */}
-        <a
-          id="accept-button"
-          href="https://www.checkout-ds24.com/answer/yes"
-          className="animate-pulse-scale block text-center w-full bg-[#009E18] hover:bg-[#008A15] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 uppercase text-lg tracking-wide"
-        >
-          Access Product
-        </a>
-
-        <a
-          href="https://www.checkout-ds24.com/answer/no"
-          className="text-gray-400 hover:text-gray-300 transition-colors underline underline-offset-4 text-sm mt-2"
-        >
-          No thanks, I don't want to access the product right now.
-        </a>
+        <div className="w-full flex flex-col items-center" suppressHydrationWarning dangerouslySetInnerHTML={{
+          __html: `
+            <a
+              id="accept-button"
+              href="https://www.checkout-ds24.com/answer/yes"
+              class="animate-pulse-scale block text-center w-full bg-[#009E18] hover:bg-[#008A15] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 uppercase text-lg tracking-wide"
+            >
+              Access Product
+            </a>
+            <a
+              href="https://www.checkout-ds24.com/answer/no"
+              class="text-gray-400 hover:text-gray-300 transition-colors underline underline-offset-4 text-sm mt-2"
+            >
+              No thanks, I don't want to access the product right now.
+            </a>
+          `
+        }} />
 
         {/* ✅ Script com onLoad chamando digistoreUpsell() */}
         <Script

@@ -56,23 +56,23 @@ export default function Up1Page() {
             </p>
           </div>
 
-          <div className="w-full flex flex-col space-y-4 pt-2">
-
-          <a
-            id="accept-button"
-            href="https://www.checkout-ds24.com/answer/yes"
-            className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-5 rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
-            >
-            I WANT THIS MIRACLE
-          </a>
-
-          <a
-            href="https://www.checkout-ds24.com/answer/no"
-            className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
-            >
-          No thanks, I decline this opportunity.
-        </a>
-      </div>
+          <div className="w-full flex flex-col space-y-4 pt-2" suppressHydrationWarning dangerouslySetInnerHTML={{
+            __html: `
+              <a
+                id="accept-button"
+                href="https://www.checkout-ds24.com/answer/yes"
+                class="w-full block text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-5 rounded-lg shadow-lg text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
+              >
+                I WANT THIS MIRACLE
+              </a>
+              <a
+                href="https://www.checkout-ds24.com/answer/no"
+                class="w-full block text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
+              >
+                No thanks, I decline this opportunity.
+              </a>
+            `
+          }} />
 
       <div className="w-full flex flex-col space-y-3 pt-6 pb-4">
         <div className="flex items-center justify-center space-x-2 text-sm sm:text-[15px]">

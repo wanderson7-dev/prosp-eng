@@ -42,23 +42,23 @@ export default function Up2Page() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="w-full flex flex-col space-y-4 pt-2">
-
-          <a
-            id="accept-button"
-            href="https://www.checkout-ds24.com/answer/yes"
-            className="w-full text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
-            >
-            RECEIVE NOW &mdash; HEAVEN WON'T WAIT
-          </a>
-
-          <a
-            href="https://www.checkout-ds24.com/answer/no"
-            className="w-full text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
-            >
-          No thanks, I decline this opportunity.
-        </a>
-      </div>
+          <div className="w-full flex flex-col space-y-4 pt-2" suppressHydrationWarning dangerouslySetInnerHTML={{
+            __html: `
+              <a
+                id="accept-button"
+                href="https://www.checkout-ds24.com/answer/yes"
+                class="w-full block text-center bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold py-[18px] rounded-lg shadow-lg text-lg sm:text-xl tracking-wide uppercase transition-all active:scale-[0.98]"
+              >
+                RECEIVE NOW &mdash; HEAVEN WON'T WAIT
+              </a>
+              <a
+                href="https://www.checkout-ds24.com/answer/no"
+                class="w-full block text-center bg-[#e5e7eb] hover:bg-[#d1d5db] text-gray-400 hover:text-gray-500 font-medium py-3 rounded-lg text-sm transition-all active:scale-[0.98]"
+              >
+                No thanks, I decline this opportunity.
+              </a>
+            `
+          }} />
 
       {/* Scarcity / Urgency */}
       <div className="w-full flex flex-col space-y-3 pt-6 pb-4">
