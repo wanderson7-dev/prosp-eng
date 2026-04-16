@@ -1,17 +1,15 @@
 "use client";
 
 import { BadgeCheck } from "lucide-react";
-import { useEffect } from "react";
 import Script from "next/script";
 
 export default function Page() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#020617] px-6 py-12 text-center text-white font-[family-name:var(--font-red-hat-display),sans-serif]">
       <div className="flex flex-col items-center max-w-[22rem] w-full gap-8">
-        
+
         {/* Icon */}
         <div className="flex justify-center mb-2">
-          {/* Custom SVG icon for more exact match if desired, but BadgeCheck is nice */}
           <BadgeCheck color="white" fill="#00D120" size={110} strokeWidth={1.5} />
         </div>
 
@@ -28,7 +26,8 @@ export default function Page() {
         </p>
 
         {/* Pulse Style */}
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes pulse-scale {
             0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 158, 24, 0.3); }
             50% { transform: scale(1.03); box-shadow: 0 0 25px rgba(0, 158, 24, 0.6); }
@@ -39,21 +38,31 @@ export default function Page() {
         `}} />
 
         {/* Action Buttons */}
-        <a 
+        <a
           id="accept-button"
-          href="https://www.checkout-ds24.com/answer/yes"
+          href="https://www.checkout-ds24.com/answer/yes?template=light"
           className="animate-pulse-scale block text-center w-full bg-[#009E18] hover:bg-[#008A15] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 uppercase text-lg tracking-wide"
         >
           Access Product
         </a>
 
-        {/* Visible Deny Button */}
-        <a href="https://www.checkout-ds24.com/answer/no" className="text-gray-400 hover:text-gray-300 transition-colors underline underline-offset-4 text-sm mt-2">
+        <a
+          href="https://www.checkout-ds24.com/answer/no"
+          className="text-gray-400 hover:text-gray-300 transition-colors underline underline-offset-4 text-sm mt-2"
+        >
           No thanks, I don't want to access the product right now.
         </a>
 
-        {/* Digistore Scripts */}
-        <Script src="https://www.digistore24-scripts.com/service/digistore.js" strategy="afterInteractive" />
+        {/* ✅ Script com onLoad chamando digistoreUpsell() */}
+        <Script
+          src="https://www.digistore24-scripts.com/service/digistore.js"
+          strategy="afterInteractive"
+          onLoad={() => {
+            if (typeof window !== "undefined" && typeof (window as any).digistoreUpsell === "function") {
+              (window as any).digistoreUpsell();
+            }
+          }}
+        />
 
       </div>
     </div>
