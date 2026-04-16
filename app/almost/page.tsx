@@ -2,8 +2,14 @@
 
 import { BadgeCheck } from "lucide-react";
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
 export default function Page() {
+  const [queryParams, setQueryParams] = useState("");
+
+  useEffect(() => {
+    setQueryParams(window.location.search);
+  }, []);
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#020617] px-6 py-12 text-center text-white font-[family-name:var(--font-red-hat-display),sans-serif]">
       <div className="flex flex-col items-center max-w-[22rem] w-full gap-8">
@@ -40,14 +46,14 @@ export default function Page() {
         {/* Action Buttons */}
         <a
           id="accept-button"
-          href="https://www.checkout-ds24.com/answer/yes?template=light"
+          href={`https://www.checkout-ds24.com/answer/yes${queryParams}`}
           className="animate-pulse-scale block text-center w-full bg-[#009E18] hover:bg-[#008A15] text-white font-bold py-4 px-6 rounded-xl transition-all active:scale-95 uppercase text-lg tracking-wide"
         >
           Access Product
         </a>
 
         <a
-          href="https://www.checkout-ds24.com/answer/no"
+          href={`https://www.checkout-ds24.com/answer/no${queryParams}`}
           className="text-gray-400 hover:text-gray-300 transition-colors underline underline-offset-4 text-sm mt-2"
         >
           No thanks, I don't want to access the product right now.
