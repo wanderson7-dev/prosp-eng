@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purchase Approved</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Red Hat Display', sans-serif;
+      background-color: #020617;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 22rem;
+      width: 100%;
+      gap: 32px;
+    }
+
+    .icon svg {
+      width: 110px;
+      height: 110px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #00D120;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    p {
+      font-size: 17px;
+      font-weight: 500;
+      color: #f9fafb;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #accept-button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background-color: #009E18;
+      color: white;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      animation: pulse-scale 1.5s ease-in-out infinite;
+      transition: background-color 0.2s;
+    }
+
+    #accept-button:hover { background-color: #008A15; }
+    #accept-button:active { transform: scale(0.95); }
+
+    .decline {
+      color: #9ca3af;
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.2s;
+    }
+
+    .decline:hover { color: #d1d5db; }
+
+    @keyframes pulse-scale {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 158, 24, 0.3); }
+      50%       { transform: scale(1.03); box-shadow: 0 0 25px rgba(0, 158, 24, 0.6); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="11" fill="#00D120" stroke="white" stroke-width="1.5"/>
+        <path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h1>Congratulations,<br />Purchase Approved!</h1>
+
+    <p>Tap the button below and<br />access your product!</p>
+
+    <div class="buttons">
+      <a id="accept-button" href="https://www.checkout-ds24.com/answer/yes">
+        Access Product
+      </a>
+      <a class="decline" href="https://www.checkout-ds24.com/answer/no">
+        No thanks, I don't want to access the product right now.
+      </a>
+    </div>
+
+  </div>
+
+  <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
+</body>
+</html>
