@@ -1,9 +1,19 @@
 "use client";
 
 import { BadgeCheck } from "lucide-react";
-import Script from "next/script";
+import { useEffect } from "react";
 
 export default function Page() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.digistore24-scripts.com/service/digistore.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#020617] px-6 py-12 text-center text-white font-[family-name:var(--font-red-hat-display),sans-serif]">
       <div className="flex flex-col items-center max-w-[22rem] w-full gap-8">
@@ -49,10 +59,6 @@ export default function Page() {
           </a>
         </div>
 
-        <Script
-          src="https://www.digistore24-scripts.com/service/digistore.js"
-          strategy="afterInteractive"
-        />
 
       </div>
     </div>
