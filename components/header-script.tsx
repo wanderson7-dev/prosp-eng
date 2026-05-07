@@ -1,8 +1,8 @@
 import Script from "next/script";
 
 const idList: Record<string, string> = {
-  new: "69c1c08dd780529a761b8b67",
-  acutis: "69c1c08dd780529a761b8b67",
+  new: "69fbea12abc811cf420a7573",
+  acutis: "69fbea12abc811cf420a7573",
 };
 
 export default function HeaderScript({ content }: { content: string }) {
