@@ -5,6 +5,12 @@ import { useEffect } from "react";
 
 export default function Page() {
   useEffect(() => {
+    if (!sessionStorage.getItem("almost_loaded")) {
+      sessionStorage.setItem("almost_loaded", "1");
+      window.location.reload();
+      return;
+    }
+
     const script = document.createElement("script");
     script.src = "https://www.digistore24-scripts.com/service/digistore.js";
     script.async = true;
