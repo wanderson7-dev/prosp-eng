@@ -5,8 +5,10 @@ import { useEffect } from "react";
 
 export default function Page() {
   useEffect(() => {
-    if (!sessionStorage.getItem("almost_loaded")) {
-      sessionStorage.setItem("almost_loaded", "1");
+    const key = "almost_loaded";
+
+    if (!sessionStorage.getItem(key)) {
+      sessionStorage.setItem(key, "1");
       window.location.reload();
       return;
     }
@@ -15,8 +17,10 @@ export default function Page() {
     script.src = "https://www.digistore24-scripts.com/service/digistore.js";
     script.async = true;
     document.body.appendChild(script);
+
     return () => {
-      document.body.removeChild(script);
+      script.remove();
+      sessionStorage.removeItem(key);
     };
   }, []);
 
