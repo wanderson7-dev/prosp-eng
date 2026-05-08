@@ -41,7 +41,6 @@ export default function Page() {
 
           <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
             <a
-              id="accept-button"
               href="https://www.checkout-ds24.com/answer/yes"
               className="pulse"
               style={{
