@@ -73,7 +73,6 @@ export default function WhitepageAlmost() {
         <div className="w-full max-w-md flex flex-col gap-4">
           
           <a
-            id="accept-button"
             href="https://www.checkout-ds24.com/answer/yes"
             className="group relative flex items-center justify-center w-full bg-green-500 hover:bg-green-600 text-white font-bold py-5 px-8 rounded-2xl transition-all shadow-lg hover:shadow-xl active:scale-95 text-lg overflow-hidden"
           >
